@@ -25,4 +25,6 @@ ADD   | Adds the the top two values and pushes them
 SUB   | substracts the the second value from the previous
 MUL   | multiples top two values on the stack
 Div   | divides the top value by the first second top value
+AND   | does the binary AND operation and on the top two value
+OR    | does the binary OR operation and on the top two value
 HLT   | Marks the end of the program 
