@@ -3,7 +3,7 @@
 clone the repo and fire the make command
 <h3>changing the program </h3>
 to change the program edit the<br> 
-<b>Note</b> the program is array so dont forget to put , after every instructions<br>
+
 
 ```c
 int program[] = {
@@ -14,6 +14,7 @@ HLT,
 //the stack pointer must pointing to value 5 
 };
 ```
+<b>Note</b> the program is array so dont forget to put , after every instructions<br>
 <h3>instruction set </h3>
 
 Operation | Description
