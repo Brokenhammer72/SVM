@@ -18,14 +18,17 @@ enum{
   SUB,  //substract the first term with second term
   MUL,  //multiple top two terms
   DIV,  //divide top two terms
-  HLT   //terminate the program
+  AND,  //does the binary AND operation and on the top two value
+  OR,   //does the binary OR operation and on the top two value
+  HLT,  //terminate the program
 } InstructionSet;
 
 //example program
 int program[] = {
-  PSH, 15, 
-  PSH, 3,
-  DIV,
+  PSH, 12, 
+  PSH, 25,
+  OR,
+  POP,
   HLT,
 };
 
@@ -56,6 +59,7 @@ void eval(int instr){
         break;
     }
     case POP: {
+        printf("%d\n",stack[sp]);
         sp--;
         break;
     }
@@ -83,6 +87,22 @@ void eval(int instr){
         stack[sp]=result;
         break;
     }
+    case AND: {
+        int a = stack[sp];
+        int b = stack[--sp];
+        int result = b&a;
+        sp++;
+        stack[sp]=result;
+        break;
+    }
+    case OR: {
+        int a = stack[sp];
+        int b = stack[--sp];
+        int result = b|a;
+        sp++;
+        stack[sp]=result;
+        break;
+    }
 
   }  
 }
@@ -97,7 +117,7 @@ void printstack(){
 
 int main(){
   while(running){
-    printstack();
+    //printstack();
     eval(fetch());
     ip++;
   }
